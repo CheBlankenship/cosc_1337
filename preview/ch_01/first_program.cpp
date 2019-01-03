@@ -11,9 +11,14 @@ int main(){
     cin >> hours;
 
     // Get hourly pay rate.
-    cout << "How much do you get paid per hour ";
+    cout << "How much do you get paid per hour? ";
     cin >> rate;
 
-    //
+    //Calculate the pay.
+    pay = hours * rate;
+
+    cout << "You have earned $" << pay << endl;
+
+
     return 0;
 }
