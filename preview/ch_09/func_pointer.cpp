@@ -13,13 +13,6 @@ void doubleValue(int *val) {
 }
 
 
-// Set val address
-void setTwo(int *val) {
-    *val = 2;
-    cout << "The first element is " << val << endl;
-    //return val;
-}
-
 
  int main() {
     int number;
