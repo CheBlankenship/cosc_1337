@@ -2,12 +2,10 @@
 
 #include <iostream>
 #include <string>
-#include <sstream>
+// #include <sstream>
 #include <iomanip>
-#include <cctype>
-#include <cmath>
-#include <vector>
-// using namespace std;
+// #include <cctype>
+// #include <cmath>
 
 int main()
 {
@@ -34,6 +32,8 @@ int main()
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Clean the whole thing.
             std::cout << "Enter runner name: ";
         }
+        std::cout << "Press [ENTER] key to comfirm ";
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
         /*
         Runners finish time.
@@ -45,11 +45,13 @@ int main()
         while (!(std::cin >> runners_finish_time[i]) || !(runners_finish_time[i] > 0))
         {
             std::cin.clear();//clear bad input
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Clean the whole thing.
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             // Error message.
             std::cout << "Error: Invalid input.\nPlease re-enter(only positive numbers).\n\n";
             std::cout << "Enter runners finish time(hour): " ;
         }
+        //std::cout << "Press [ENTER] key";
+        //std::cin.get();
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
     }
@@ -63,7 +65,7 @@ int main()
     bool continue_sort = true;
     int loop_num = SIZE - 1;
     std::string save_temp_name;
-    int save_temp_time;
+    double save_temp_time;
     while (continue_sort && loop_num > 0) {
         continue_sort = false;
         for (int index = 0; index < loop_num; index++)
@@ -86,6 +88,23 @@ int main()
         }
     }
 
+
+    /*
+    Display on the console.
+    [Cases]
+    If there are 3 people
+    1) 1st - 1st - 1st
+    2) 1st - 1st - 3rd
+    2) 1st - 2nd - 2nd
+    4) 1st - 2nd - 3rd
+    - 1 person: 1 case.
+    - 2 people: 2 cases.
+    - 3 people: 4 cases.
+    - 4 people: 8 cases.
+    - 5 people: 16 cases.
+    Therefore, you can say it is following the sequence of
+    f(n) = 2^(n-1) , (n is the number of people).
+    */
     std::cout << "--------------- List of runners ---------------" << '\n';
     for (int j = 0; j < SIZE; j++)
     {
