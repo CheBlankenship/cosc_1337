@@ -2,10 +2,8 @@
 
 #include <iostream>
 #include <string>
-// #include <sstream>
 #include <iomanip>
-// #include <cctype>
-// #include <cmath>
+
 
 int main()
 {
@@ -13,8 +11,6 @@ int main()
     const int SIZE = 3;
     std::string runner_names[SIZE];
     double runners_finish_time[SIZE];
-
-
 
     for (int i = 0; i < SIZE; i++)
     {
@@ -66,6 +62,7 @@ int main()
     int loop_num = SIZE - 1;
     std::string save_temp_name;
     double save_temp_time;
+
     while (continue_sort && loop_num > 0) {
         continue_sort = false;
         for (int index = 0; index < loop_num; index++)
@@ -106,13 +103,42 @@ int main()
     f(n) = 2^(n-1) , (n is the number of people).
     */
     std::cout << "--------------- List of runners ---------------" << '\n';
-    for (int j = 0; j < SIZE; j++)
+
+
+    if (runners_finish_time[0] == runners_finish_time[1] && runners_finish_time[1] == runners_finish_time[2])
     {
-        std::cout << j+1 << ": Name: " << runner_names[j] << ", Time: " << runners_finish_time[j] <<'\n';
+        std::cout << "Case 1" << '\n';
+        for (int j = 0; j < SIZE; j++)
+        {
+            //std::cout << j+1 << ": Name: " << runner_names[j] << ", Time: " << runners_finish_time[j] <<'\n';
+            std::cout << "1st: " << runner_names[j] << ", " << runners_finish_time[j] << '\n';
+        }
     }
-
-
-
+    else if(runners_finish_time[0] == runners_finish_time[1] && runners_finish_time[1] < runners_finish_time[2])
+    {
+        std::cout << "Case 2" << '\n';
+        std::cout << "1st: " << runner_names[0] << ", " << runners_finish_time[0] << '\n';
+        std::cout << "1st: " << runner_names[1] << ", " << runners_finish_time[1] << '\n';
+        std::cout << "3rd: " << runner_names[2] << ", " << runners_finish_time[2] << '\n';
+    }
+    else if(runners_finish_time[0] < runners_finish_time[1] && runners_finish_time[1] == runners_finish_time[2])
+    {
+        std::cout << "Case 3" << '\n';
+        std::cout << "1st: " << runner_names[0] << ", " << runners_finish_time[0] << '\n';
+        std::cout << "2nd: " << runner_names[1] << ", " << runners_finish_time[1] << '\n';
+        std::cout << "3nd: " << runner_names[2] << ", " << runners_finish_time[2] << '\n';
+    }
+    else if(runners_finish_time[0] < runners_finish_time[1] && runners_finish_time[1] < runners_finish_time[2])
+    {
+        std::cout << "Case 4" << '\n';
+        std::cout << "1st: " << runner_names[0] << ", " << runners_finish_time[0] << '\n';
+        std::cout << "2nd: " << runner_names[1] << ", " << runners_finish_time[1] << '\n';
+        std::cout << "3rd: " << runner_names[2] << ", " << runners_finish_time[2] << '\n';
+    }
+    else
+    {
+        std::cout << "ERROR" << '\n';
+    }
 
     return 0;
 }
