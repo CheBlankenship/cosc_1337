@@ -76,43 +76,43 @@ int main()
     2^(n-1) cases , (n is the number of people).
     */
     std::cout << '\n';
-    std::cout << "+------------ Standings ------------+" << '\n';
-    std::cout << "+------+----------------+-----------+" << '\n';
+    std::cout << "+------------ Standings ------------------------+" << '\n';
+    std::cout << "+------+---------------------+-----------------+" << '\n';
     std::cout << std::fixed << std::showpoint << std::setprecision(2);
-    std::cout << "|PLACE |NAME            |TIME       |\n";
-    std::cout << "+------+----------------+-----------+\n";
+    std::cout << "|PLACE |NAME                 |TIME           \n";
+    std::cout << "+------+---------------------+-----------------+" << '\n';
     // 1) 1st - 1st - 1st
     if (runners_finish_time[0] == runners_finish_time[1] && runners_finish_time[1] == runners_finish_time[2])
     {
         for (int j = 0; j < SIZE; j++)
         {
-            std::cout << "| 1st" << std::setw(4) << "| " << runner_names[j] << std::setw(15) << "|" << std::setw(2) << runners_finish_time[j] << "s"<< std::setw(7) << "|" << '\n';
+            std::cout << "| 1st" << std::setw(4) << "| " << runner_names[j] << std::setw(20) << "|" << std::setw(2) << runners_finish_time[j] << "s"<< std::setw(7) << '\n';
         }
-        std::cout << "+------+----------------+-----------+\n\n";
+
     }
     // 2) 1st - 1st - 3rd
     else if(runners_finish_time[0] == runners_finish_time[1] && runners_finish_time[1] < runners_finish_time[2])
     {
-        std::cout << "| 1st" << std::setw(4) << "| " << runner_names[0] << std::setw(15) << "|" << std::setw(2) << runners_finish_time[0] << "s"<< std::setw(7) << "|" << '\n';
-        std::cout << "| 1st" << std::setw(4) << "| " << runner_names[1] << std::setw(15) << "|" << std::setw(2) << runners_finish_time[1] << "s"<< std::setw(7) << "|" << '\n';
-        std::cout << "| 3rd" << std::setw(4) << "| " << runner_names[2] << std::setw(15) << "|" << std::setw(2) << runners_finish_time[2] << "s"<< std::setw(7) << "|" << '\n';
-        std::cout << "+------+----------------+-----------+\n\n";
+        std::cout << "| 1st" << std::setw(4) << "| " << runner_names[0] << std::setw(20) << "|" << std::setw(2) << runners_finish_time[0] << "s"<< std::setw(7) << '\n';
+        std::cout << "| 1st" << std::setw(4) << "| " << runner_names[1] << std::setw(20) << "|" << std::setw(2) << runners_finish_time[1] << "s"<< std::setw(7) << '\n';
+        std::cout << "| 3rd" << std::setw(4) << "| " << runner_names[2] << std::setw(20) << "|" << std::setw(2) << runners_finish_time[2] << "s"<< std::setw(7) << '\n';
+
     }
     // 3) 1st - 2nd - 2nd
     else if(runners_finish_time[0] < runners_finish_time[1] && runners_finish_time[1] == runners_finish_time[2])
     {
-        std::cout << "| 1st" << std::setw(4) << "| " << runner_names[0] << std::setw(15) << "|" << std::setw(2) << runners_finish_time[0] << "s"<< std::setw(7) << "|" << '\n';
-        std::cout << "| 2nd" << std::setw(4) << "| " << runner_names[1] << std::setw(15) << "|" << std::setw(2) << runners_finish_time[1] << "s"<< std::setw(7) << "|" << '\n';
-        std::cout << "| 2nd" << std::setw(4) << "| " << runner_names[2] << std::setw(15) << "|" << std::setw(2) << runners_finish_time[2] << "s"<< std::setw(7) << "|" << '\n';
-        std::cout << "+------+----------------+-----------+\n\n";
+        std::cout << "| 1st" << std::setw(4) << "| " << runner_names[0] << std::setw(20) << "|" << std::setw(2) << runners_finish_time[0] << "s"<< std::setw(7) << '\n';
+        std::cout << "| 2nd" << std::setw(4) << "| " << runner_names[1] << std::setw(20) << "|" << std::setw(2) << runners_finish_time[1] << "s"<< std::setw(7) << '\n';
+        std::cout << "| 2nd" << std::setw(4) << "| " << runner_names[2] << std::setw(20) << "|" << std::setw(2) << runners_finish_time[2] << "s"<< std::setw(7) << '\n';
+
     }
     // 4) 1st - 2nd - 3rd
     else if(runners_finish_time[0] < runners_finish_time[1] && runners_finish_time[1] < runners_finish_time[2])
     {
-        std::cout << "| 1st" << std::setw(4) << "| " << runner_names[0] << std::setw(15) << "|" << std::setw(2) << runners_finish_time[0] << "s"<< std::setw(7) << "|" << '\n';
-        std::cout << "| 2nd" << std::setw(4) << "| " << runner_names[1] << std::setw(15) << "|" << std::setw(2) << runners_finish_time[1] << "s"<< std::setw(7) << "|" << '\n';
-        std::cout << "| 3rd" << std::setw(4) << "| " << runner_names[2] << std::setw(15) << "|" << std::setw(2) << runners_finish_time[2] << "s"<< std::setw(7) << "|" << '\n';
-        std::cout << "+------+----------------+-----------+\n\n";
+        std::cout << "| 1st" << std::setw(4) << "| " << runner_names[0] << std::setw(20) << "|" << std::setw(2) << runners_finish_time[0] << "s"<< std::setw(7) << '\n';
+        std::cout << "| 2nd" << std::setw(4) << "| " << runner_names[1] << std::setw(20) << "|" << std::setw(2) << runners_finish_time[1] << "s"<< std::setw(7) << '\n';
+        std::cout << "| 3rd" << std::setw(4) << "| " << runner_names[2] << std::setw(20) << "|" << std::setw(2) << runners_finish_time[2] << "s"<< std::setw(7) << '\n';
+
     }
     // Negative case. Which should not happen.
     else
